@@ -1,8 +1,12 @@
 # Duck schema
 
+![](./docs/assets/duck-schema.png)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/e1ab9814c0ce1fbd3c17/maintainability)](https://codeclimate.com/github/gemmadlou/duck-schema/maintainability)
+
 A schema that extends JSON Schema for use with databases.
 
-## Contributors
+## Contributing
 
 You need:
 
@@ -17,7 +21,7 @@ npm test
 
 ## Credits
 
-- JSON Schema
+- [JSON Schema](https://json-schema.org/)
 - [SQL DDL to JSON Schema](https://github.com/duartealexf/sql-ddl-to-json-schema)
 
 ## Licence
