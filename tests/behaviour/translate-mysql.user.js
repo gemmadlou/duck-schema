@@ -1,4 +1,4 @@
-{
+module.exports = {
     "id": "http://theworldisours/user.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "User schema",
@@ -6,7 +6,7 @@
     "title": "user",
     "properties": {
         "id": {
-            "type": "number",
+            "type": "int",
             "maxLength": 11,
             "autoincrement": true,
             "primary": true

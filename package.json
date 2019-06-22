@@ -1,0 +1,29 @@
+{
+  "name": "duck-schema",
+  "version": "0.0.0",
+  "description": "A schema that extends JSON Schema for use with databases.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "dependencies": {
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest tests --coverage",
+    "test:watch": "jest tests --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gemmadlou/duck-schema.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gemmadlou/duck-schema/issues"
+  },
+  "homepage": "https://github.com/gemmadlou/duck-schema#readme"
+}
