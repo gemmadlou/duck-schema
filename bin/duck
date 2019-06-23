@@ -19,8 +19,15 @@ program
       if (!dsl || !input || !output) {
         console.error('Arguments missing. duck generate -h for more info')
       }
-      const files = fs.readdirSync(path.join(process.cwd(), ...input.split('/')))
-      let content = files.map(file => mysqltranslator(require(path.join(process.cwd(), ...input.split('/'), file)))).join("\n")
+      let pathTo = path.join(process.cwd(), ...input.split('/'))
+      let content = '';
+      if (fs.lstatSync(pathTo).isDirectory()) {
+        let files = fs.readdirSync(pathTo)
+        content = files.map(file => mysqltranslator(require(path.join(process.cwd(), ...input.split('/'), file)))).join("\n")
+      } else {
+        content = mysqltranslator(require(pathTo))
+      }
+      
       fs.writeFileSync(path.join(process.cwd(), ...output.split('/')), content, { encoding: 'utf8'})
   });
 
