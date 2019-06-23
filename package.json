@@ -7,10 +7,15 @@
     "example": "examples",
     "test": "tests"
   },
+  "bin": {
+    "duck": "./bin/duck"
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^24.8.0",
     "babel-preset-flow": "^6.23.0",
+    "commander": "^2.20.0",
+    "glob": "^7.1.4",
     "jest": "^24.8.0"
   },
   "devDependencies": {

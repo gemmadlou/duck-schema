@@ -55,7 +55,7 @@ const column = (config, key, values /*: PropertyMeta */) => {
         valueType(values.type, stringtype, length) +
         (config.required.includes(key) ? 'NOT NULL ' : '') + 
         (values.autoincrement ? 'AUTO_INCREMENT ' : '') + 
-        (values.primary ? 'PRIMARY KEY ' : '')
+        (values.primary || values.autoincrement ? 'PRIMARY KEY ' : '')
 }
 
 /**

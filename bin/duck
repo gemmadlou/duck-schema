@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const mysqltranslator = require('../translators/mysql')
+ 
+var program = require('commander');
+
+program
+  .version(require(path.join(__dirname, '..', 'package.json')).version, '-v', '--version')
+
+program
+  .command('generate')
+  .description('generate dsl from your config')
+  .option("-d, --dsl [dsl]", "DSL eg. mysql")
+  .option("-i, --input [input]", "Input files as glob, comma delimted for multiple eg. tests/*,dir/file.js")
+  .option("-o, --output [output]", "Output file")
+  .action(({dsl, input, output}) => {
+      if (!dsl || !input || !output) {
+        console.error('Arguments missing. duck generate -h for more info')
+      }
+      const files = fs.readdirSync(path.join(process.cwd(), ...input.split('/')))
+      let content = files.map(file => mysqltranslator(require(path.join(process.cwd(), ...input.split('/'), file)))).join("\n")
+      fs.writeFileSync(path.join(process.cwd(), ...output.split('/')), content, { encoding: 'utf8'})
+  });
+
+program
+  .parse(process.argv);
