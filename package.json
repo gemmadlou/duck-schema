@@ -8,13 +8,18 @@
     "test": "tests"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-jest": "^24.8.0",
+    "babel-preset-flow": "^6.23.0",
     "jest": "^24.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "flow-bin": "^0.101.1"
+  },
   "scripts": {
     "test": "jest tests --coverage",
-    "test:watch": "jest tests --watch"
+    "test:watch": "jest tests --watch",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
